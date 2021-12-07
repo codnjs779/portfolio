@@ -67,12 +67,14 @@ body {
 }
 .nav_logoImg {
     width: 100px;
+    height: 90px;
 }
 
 /* main section */
 main {
+    background: url("./img/back.png") center/cover no-repeat;
     text-align: center;
-    margin-top: 100px;
+    padding: 40px;
 }
 
 .main_profileImg {
