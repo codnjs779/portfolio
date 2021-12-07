@@ -23,17 +23,22 @@
         <script src="main.js" defer></script>
     </head>
     <body>
-        <div class="background">
-            <nav>
-                <img src="img/logo.png" class="nav_logoImg" />
-                <spna class="nav_pageTitle">Chaewon</spna>
+     
+            <nav id='navbar'>
+                <div class="navbar__logo">
+                <span><img src="img/logo.png" class="nav_logoImg" /></span>
+                <a href="#" class="nav_pageTitle">Chaewon</a>
+                </div>
 
-                <div class="nav_menuBar">
-                    <div>Home</div>
-                    <div>About</div>
-                    <div>Skills</div>
-                    <div>My work</div>
-                    <div>Contact</div>
+                <div class="navbar_menu">
+                    <ul class="navbar__menu">
+                        <li class="navbar__menu__item active">Home</li>
+                        <li class="navbar__menu__item">About</li>
+                        <li class="navbar__menu__item">Skills</li>
+                        <li class="navbar__menu__item">My work</li>
+                        <li class="navbar__menu__item">Contact</li>
+                    </ul>
+                    
                 </div>
             </nav>
 
@@ -43,7 +48,7 @@
                 <h1>꾸준히 성장하고 있는 000입니다.</h1>
                 <button>CONTACT ME</button>
             </main>
-        </div>
+    
 
         <article>
                 <h1>About me</h1>
@@ -210,5 +215,8 @@
         <div class="article_contents">
             <i class="fab fa-github"></i>
             <div class="article_contents_end">2021 chaewon - portfolio</div>
-    </body>
+  
+
+        </body>
+
 </html>

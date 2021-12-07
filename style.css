@@ -1,5 +1,6 @@
 @import url(reset.css);
-
+/* 글로벌 변수는 폰트 사이즈(라지, 미듐, 레귤러, 스몰등으로 정의)
+폰트 웨잇(볼드, 세미볼드, 레귤러) 등을 지정함, 컬러 또한  */
 :root {
     --font-kor: "Noto Serif KR", serif;
     --font-eng: "Permanent Marker", cursive;
@@ -9,6 +10,12 @@
     --purple-base: #bacbed;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+/* 타이포그래피도 설정해주면 좋음 h2. h3이런거  */
+
 .background {
     background-image: url("../img/back.png");
     height: 100vh;
@@ -16,38 +23,50 @@
     background-size: cover;
 }
 
+body {
+    cursor: default;
+}
+
 /* nav */
-nav {
+#navbar {
     display: flex;
     justify-content: space-between;
-}
-
-nav div {
-    margin-top: 20px;
-}
-
-.nav_pageTitle {
-    width: 100px;
-    height: 50px;
-    margin-right: 700px;
+    align-items: center;
     font-family: var(--font-eng);
-    font-size: 30px;
-    margin-top: 35px;
+    background-color: var(--pink-base);
 }
 
+.navbar__menu {
+    display: flex;
+}
+.nav_pageTitle {
+    font-size: 30px;
+    text-decoration: none;
+    position: relative;
+    top: -40px;
+    color: black;
+}
+
+.navbar__logo a {
+    font-size: 30px;
+}
+
+.navbar__menu__item {
+    padding: 8px 12px;
+    margin: 0 4px;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.navbar__menu__item:hover {
+    border: 1px solid white;
+}
+.navbar__menu__item.active {
+    background-color: white;
+}
 .nav_logoImg {
     width: 100px;
-}
-
-.nav_menuBar {
-    display: flex;
-    width: 1300px;
-    height: 30px;
-
-    justify-content: space-around;
-    margin-right: 50px;
-    font-size: 25px;
-    font-family: var(--font-eng);
 }
 
 /* main section */
@@ -205,4 +224,9 @@ article:nth-child(5) {
 
 .article_contents_end {
     margin-top: 50px;
+}
+
+.box {
+    box-sizing: content-box;
+    width: 100%;
 }
