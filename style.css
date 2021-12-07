@@ -70,6 +70,17 @@ body {
     height: 90px;
 }
 
+.navbar__toggle_btn {
+    position: absolute;
+    top: 25px;
+    right: 32px;
+    font-size: 24px;
+    color: black;
+    display: none;
+    background: none;
+    border: none;
+}
+
 /* main section */
 main {
     background: url("./img/back.png") center/cover no-repeat;
@@ -151,31 +162,24 @@ article:nth-child(3) {
     background-color: var(--purple-base);
 }
 
+.skills_progressBox h3 {
+    margin-top: 60px;
+}
+
 .skills_nameAndPer {
     display: flex;
     justify-content: space-between;
-    width: 1000px;
+    width: 100%;
     margin: auto;
     font-weight: bold;
     margin-top: 10px;
-}
-
-/* My works */
-
-.works_selectBtn {
-    display: flex;
-
-    width: 800px;
-    height: 30px;
-    border-radius: 7px;
-    margin: auto;
 }
 
 .skills {
     padding: 10px;
 }
 .skill__bar {
-    width: 1000px;
+    width: 100%;
     height: 3px;
     background-color: var(--pink-base);
     opacity: 0.5;
@@ -190,6 +194,14 @@ article:nth-child(3) {
     height: 3px;
     background-color: violet;
 }
+/* My works */
+
+.works_selectBtn {
+    display: flex;
+    width: 100%;
+    border-radius: 7px;
+}
+
 .works_selectBtn div {
     width: 200px;
     border: solid 1px rgb(194, 191, 191);
@@ -199,17 +211,21 @@ article:nth-child(3) {
 }
 
 .container {
-    display: grid;
-    width: 1600px;
-    height: 700px;
-    margin: auto;
-    margin-top: 100px;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
 }
 
 .container div {
     background-color: gray;
-    margin: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 250px;
+    margin: 2px;
 }
 
 /* contact */
@@ -229,4 +245,37 @@ article:nth-child(5) {
 .box {
     box-sizing: content-box;
     width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar__toggle_btn {
+        display: block;
+    }
+
+    #navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar__menu {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        display: none;
+    }
+
+    .about_major {
+        flex-direction: column;
+    }
+
+    .iconBox {
+        margin-top: 30px;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+    .containder div {
+        flex-grow: 1;
+    }
 }
