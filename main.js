@@ -62,6 +62,13 @@ const btnonClick = () => {
     scrollIntoView("#contact");
 };
 
+//홈 스크롤 하면 투명해짐
+const matinContainer = document.querySelector(".main_container");
+const mainHeight = main.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+    matinContainer.style.opacity = 1 - window.scrollY / mainHeight;
+});
+
 //반복되는 코드 함수로 추출
 const scrollIntoView = (selector) => {
     const scrollTo = document.querySelector(selector);
