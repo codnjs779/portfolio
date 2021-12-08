@@ -23,39 +23,42 @@
         <script src="main.js" defer></script>
     </head>
     <body>
+        <div onclick=" arrowBtnClick()" class="upArrowBtnBox">
+            <img class="upArrowBtn" src="img/arrow.svg" width="100px"/>
+     </div>
      
-            <nav id="navbar">
+            <nav id="navbar" >
                 <div class="navbar__logo">
                 <span><img src="img/logo.png" class="nav_logoImg" /></span>
                 <a href="#" class="nav_pageTitle">Chaewon</a>
                 </div>
 
-                <div class="navbar__menu ">
-                    <ul class="navbar__menu ">
-                        <li class="navbar__menu__item active">Home</li>
-                        <li class="navbar__menu__item">About</li>
-                        <li class="navbar__menu__item">Skills</li>
-                        <li class="navbar__menu__item">My work</li>
-                        <li class="navbar__menu__item">Contact</li>
+                <div class="navbar__menu">
+                    <ul class="navbar__menu" >
+                       <a href="#main"><li  onclick="selectedNav()" id="nav_home" class="navbar__menu__item active">Home</li></a>
+                       <a href="#about"><li onclick="selectedNav()" id="nav_about" class="navbar__menu__item">About</li></a> 
+                       <a href="#skillBox"><li onclick="selectedNav()" id="nav_skill" class="navbar__menu__item">Skills</li></a> 
+                       <a href="#myWorks"> <li onclick="selectedNav()" id="nav_mywork" class="navbar__menu__item">My work</li></a>  
+                       <a href="#contact"><li onclick="selectedNav()" id="nav_contact" class="navbar__menu__item">Contact</li></a>  
                     </ul>
                     
                 </div>
-                <button class="navbar__toggle_btn">
+                <button class="navbar__toggle_btn" onclick="toggleBtn()" >
                     <i class="fas fa-bars"></i>
                 </button>
                
             </nav>
 
 
-            <main>
+            <main id="main" onscroll="navBarScrollHandler()">
                 <img src="img/profile.jpg" class="main_profileImg" />
                 <h1>안녕하세요,</h1>
                 <h1>꾸준히 성장하고 있는 000입니다.</h1>
-                <button>CONTACT ME</button>
+                <button class='mainBtn' onclick="btnonClick()">CONTACT ME</button>
             </main>
     
-
-        <article>
+        
+        <article id="about">
                 <h1>About me</h1>
                 <div class="article_contents">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto praesentium, odit aspernatur facere laboriosam odio, repudiandae tempore non nulla cumque accusamus enim distinctio,
@@ -64,43 +67,39 @@
                     vel ipsa cumque sapiente aut illum aliquam reiciendis. Sunt alias distinctio voluptatibus consectetur excepturi adipisci in odio?
                 </div>
 
-                <div class="aboutme_boxSet">
+      
 <div class="about_major">
-    <div class="iconBox">
-        <div><img src="./img/web_basic.png"/></div>
+
+    <div class="iconBoxSet">
+        <div class="iconBox">
+        <img src="./img/web_basic.png"/>
     </div>
-    <div>
-        <h3>Web Basic</h3>
+        <div>Web Basic</div>
         <div>blabla</div>
     </div>
 
-
-<div>
-    <div class="iconBox">
-    <img src="./img/rect.png"/>
-</div>
-
-<div>
-    <h3>Library</h3>
-    <div>blabla</div>
-</div>
-
-</div>
-
-<div>
-    <div class="iconBox" >
-        <img id='reduxIcon'src="./img/redux.png"/>
+    <div class="iconBoxSet">
+        <div class="iconBox">
+        <img src="./img/web_basic.png"/>
     </div>
+        <div>Web Basic</div>
+        <div>blabla</div>
+    </div>
+
+    <div class="iconBoxSet">
+        <div class="iconBox">
+        <img src="./img/web_basic.png"/>
+    </div>
+        <div>Web Basic</div>
+        <div>blabla</div>
+    </div>
+
     
-    <div>
-        <h3>상태관리</h3>  <div>blabla</div>
-    </div>
-</div>
-</div>
+
 </div>
         </article>
 
-<article>
+<article id="skillBox">
     <h1>Skills</h1>
     <h2>Skills & Attributes</h2>
     <div class="article_contents">
@@ -123,6 +122,7 @@
             <div class="skill__value" style="width: 90%;"></div>
         </div>
 </div>
+
 
       
 <div class="skills">
@@ -177,7 +177,7 @@
 </article>
 
 
-<article>
+<article id="myWorks">
     <h1>My works</h1>
     <div class="works_selectBtn">
         <div>All</div>
@@ -186,21 +186,21 @@
         <div>Graphql</div>
     </div>
 <div class="container">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
     
 </div>
 
     </article>
 
 
-    <article>
+    <article id="contact">
         <h1>Contact</h1>
         <h2>vegetawonny@gmail.com</h2>
         <div class="article_contents">

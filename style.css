@@ -33,9 +33,15 @@ body {
     justify-content: space-between;
     align-items: center;
     font-family: var(--font-eng);
-    background-color: var(--pink-base);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
+.dark {
+    background-color: var(--pink-base);
+    transition: all 300ms ease-in-out;
+}
 .navbar__menu {
     display: flex;
 }
@@ -80,6 +86,10 @@ body {
     background: none;
     border: none;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
 
 /* main section */
 main {
@@ -94,6 +104,7 @@ main {
     border-radius: var(--border-circle);
     border: var(--border-solid);
     margin-bottom: 30px;
+    margin-top: 130px;
 }
 
 main h1 {
@@ -116,6 +127,15 @@ main button {
 main button:hover {
     background-color: #bacbed;
 }
+.upArrowBtnBox {
+    display: flex;
+    justify-content: flex-end;
+    background: none;
+    position: fixed;
+    z-index: 1;
+
+    display: none;
+}
 
 /* About Me */
 
@@ -130,13 +150,14 @@ article {
     font-size: 20px;
     line-height: 25px;
 }
-article h1 {
-    font-size: 50px;
-}
-.aboutme_boxSet {
+.about_major {
     display: flex;
     justify-content: space-around;
-    margin-top: 100px;
+    margin-top: 60px;
+}
+
+article h1 {
+    font-size: 50px;
 }
 
 .iconBox {
@@ -146,7 +167,9 @@ article h1 {
     line-height: 210px;
     border: var(--border-solid);
     border-radius: var(--border-circle);
+    margin-bottom: 30px;
 }
+
 article .iconBox img {
     width: 100px;
     height: 100px;
@@ -182,7 +205,7 @@ article:nth-child(3) {
     width: 100%;
     height: 3px;
     background-color: var(--pink-base);
-    opacity: 0.5;
+
     margin: auto;
 }
 
@@ -270,6 +293,12 @@ article:nth-child(5) {
 
     .iconBox {
         margin-top: 30px;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    .iconBoxSet {
+        margin-bottom: 30px;
     }
 
     .skills {
