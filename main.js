@@ -45,33 +45,24 @@ document.addEventListener("scroll", () => {
 });
 
 //contact버튼 클릭시 페이지 이동
-const btnonClick = () => {
-    contact.scrollIntoView();
-};
+// const btnonClick = () => {
+//     contact.scrollIntoView();
+// };
 
 //nav바 클릭시 해당 선택위치 배경 변경
 
-const selectedNav = () => {
-    if (nav_about.onclick) {
-        nav_about.className += " active";
-        nav_home.className = "navbar__menu__item";
+//엘리코드 - 클릭시 해당 위치로
+const navbarMenu = document.querySelector(".navbar__menu");
+navbarMenu.addEventListener("click", (event) => {
+    console.log(event.target.dataset.link);
+    const target = event.target;
+    const link = target.dataset.link;
+    if (link == null) {
+        return;
     }
-
-    if (nav_skill.onclick) {
-        nav_skill.className += " active";
-        nav_home.className = "navbar__menu__item";
-    }
-
-    if (nav_mywork.onclick) {
-        nav_mywork.className += " active";
-        nav_home.className = "navbar__menu__item";
-    }
-
-    if (nav_contact.onclick) {
-        nav_contact.className += " active";
-        nav_home.className = "navbar__menu__item";
-    }
-};
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({ behavior: "smooth" });
+});
 
 //main scoll opacity
 
