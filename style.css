@@ -86,10 +86,6 @@ body {
     background: none;
     border: none;
 }
-a {
-    text-decoration: none;
-    color: black;
-}
 
 /* main section */
 main {
@@ -126,15 +122,6 @@ main button {
 
 main button:hover {
     background-color: #bacbed;
-}
-.upArrowBtnBox {
-    display: flex;
-    justify-content: flex-end;
-    background: none;
-    position: fixed;
-    z-index: 1;
-
-    display: none;
 }
 
 /* About Me */
@@ -268,6 +255,23 @@ article:nth-child(5) {
 .box {
     box-sizing: content-box;
     width: 100%;
+}
+
+.upArrowBtnBox {
+    background: none;
+    position: fixed;
+    z-index: 1;
+    bottom: 50px;
+    right: 50px;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+    pointer-events: none;
+}
+
+.upArrowBtnBox.visible {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 @media screen and (max-width: 768px) {

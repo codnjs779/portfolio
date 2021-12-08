@@ -10,7 +10,6 @@ let nav_skill = document.querySelector("#nav_skill");
 let nav_mywork = document.querySelector("#nav_mywork");
 let nav_contact = document.querySelector("#nav_contact");
 
-let upArrowBtnBox = document.querySelector(".upArrowBtnBox");
 let toggleButton = document.querySelector(".navbar__toggle_btn");
 let toggleNav = document.querySelector(".navbar__menu");
 
@@ -69,19 +68,26 @@ document.addEventListener("scroll", () => {
     matinContainer.style.opacity = 1 - window.scrollY / mainHeight;
 });
 
+//arrow btn
+
+let upArrowBtnBox = document.querySelector(".upArrowBtnBox");
+document.addEventListener("scroll", () => {
+    if (window.scrollY > mainHeight) {
+        upArrowBtnBox.classList.add("visible");
+    } else {
+        upArrowBtnBox.classList.remove("visible");
+    }
+});
+
+document.addEventListener("click", () => {
+    scrollIntoView("#main");
+});
+
 //반복되는 코드 함수로 추출
 const scrollIntoView = (selector) => {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({ behavior: "smooth" });
 };
-
-//main scoll opacity
-
-const arrowBtnClick = () => {
-    main.scrollIntoView();
-};
-
-//toggle Btn
 
 const toggleBtn = () => {
     if (toggleNav) {
