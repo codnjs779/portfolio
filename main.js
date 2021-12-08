@@ -44,25 +44,29 @@ document.addEventListener("scroll", () => {
     }
 });
 
-//contact버튼 클릭시 페이지 이동
-// const btnonClick = () => {
-//     contact.scrollIntoView();
-// };
-
 //nav바 클릭시 해당 선택위치 배경 변경
 
 //엘리코드 - 클릭시 해당 위치로
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
-    console.log(event.target.dataset.link);
     const target = event.target;
     const link = target.dataset.link;
     if (link == null) {
         return;
     }
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({ behavior: "smooth" });
+    scrollIntoView(link);
 });
+
+// contact버튼 클릭시 페이지 이동
+const btnonClick = () => {
+    scrollIntoView("#contact");
+};
+
+//반복되는 코드 함수로 추출
+const scrollIntoView = (selector) => {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({ behavior: "smooth" });
+};
 
 //main scoll opacity
 
